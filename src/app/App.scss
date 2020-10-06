@@ -1,0 +1,9 @@
+.menu {
+    flex-grow: 1;
+    &-button {
+        margin-right: 10px;
+    }
+    .title {
+        flex-grow: 1;
+    }
+}
