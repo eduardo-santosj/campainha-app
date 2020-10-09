@@ -3,48 +3,41 @@ import './App.scss';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { clickButton } from '../actions';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-//Components
-import { MenuAppBar } from '../components/toolBar'
+//Containers
+import { Home } from '../containers/home'
+import { Zap } from '../containers/zap'
+import { VivaReal } from '../containers/viva-real'
+import { Details } from '../containers/house-details'
 
 class App extends Component {
-  state = {
-    inputValue: ''
-  }
-
-  inputChange = (event) => {
-    this.setState({
-      inputValue: event.target.value
-    })
-  }
   render() {
-    const {
-      clickButton,
-      newValue
-    } = this.props;
-    
-    const { inputValue } = this.state;
     return (
       <div>
-        <MenuAppBar/>
-        <div className="App" style={{ paddingTop: '10px' }}>
-          <input
-            onChange={this.inputChange}
-            type='text'
-            value={inputValue}
-          />
-          <button onClick={() => clickButton(inputValue)}>
-            Click me!
-          </button>
-          <h1>{newValue}</h1>
-        </div>
+        <Router>
+          <Switch>
+            <Route path="/zap">
+              <Zap />
+            </Route>
+            <Route path="/house/:id">
+              <Details />
+            </Route>
+            <Route path="/viva-real">
+              <VivaReal/>
+            </Route>
+            <Route path="/"> 
+              <Home/>
+            </Route>
+          </Switch>
+        </Router>
       </div>
     );
   }
 }
 
-const mapStateToProps = store => ({
-  newValue: store.clickState.newValue
+const mapStateToProps = (state) => ({
+  state
 });
 
 const mapDispatchToProps = dispatch =>

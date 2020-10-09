@@ -6,4 +6,83 @@
     .title {
         flex-grow: 1;
     }
+    
+    .logo {
+        width: 100px;
+        display: flex;
+    }
+    
+    .MuiAppBar-colorPrimary {
+        background: #333!important;
+    }
+}
+
+.home {
+    .icon-viva {
+        height: 24px;
+    }
+}
+
+.card {
+    &-img-top {
+        min-height: 192px;
+        max-width: 287px;
+        min-width: 286px;
+        max-height: 193px;
+    }
+}
+
+.pagination {
+    margin: 15px auto;
+    display: flex;
+    list-style: none;
+    outline: none;
+    
+    & > .active {
+        & > a,
+        & > span,
+        & > a:hover,
+        & > span:hover,
+        & > a:focus,
+        & > span:focus {
+            background-color: #47ccde ;
+            border-color: #47ccde ;
+            color: #fff;
+            outline: none ;
+        }
+    }
+    
+    
+    & > li > a {
+        border: 1px solid #47ccde ;
+        padding: 5px 10px;
+        outline: none;
+        cursor: pointer;
+    }
+    
+    & > li {
+        & > a {
+            border: 1px solid #47ccde ;
+            padding: 5px 10px;
+            outline: none;
+            cursor: pointer;
+        }
+        & > a,
+        & > span {
+            color: #47ccde
+        }
+        &:first-child,
+        &:last-child {
+            & > a,
+            & > span {
+                border-radius: unset
+            }
+        }
+    }
+}
+.details {
+    .m-height {
+        max-height: 450px;
+        min-height: 440px;
+    }
 }

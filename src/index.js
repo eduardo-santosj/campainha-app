@@ -5,13 +5,14 @@ import App from './app/App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { Store } from './store';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { urls } from "./utils/urlUtils.js";
+import { History } from './helpers/history'
+import { BrowserRouter as Router } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <Provider store={Store}>
-    <Router>
-      <Route path={urls.home.path} component={App}/>
+    <Router history={History}>
+      <App/>
     </Router>
   </Provider>,
   document.getElementById('root')

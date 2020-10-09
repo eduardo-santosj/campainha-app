@@ -1,8 +1,6 @@
-import { clickReducer } from './clickReducer';
-// import { OtherReducer } from './otherReducer';
+import { houseReducer } from './houseReducer';
 import { combineReducers } from 'redux';
 
 export const Reducers = combineReducers({
-    clickState: clickReducer,
-    // otherState: OtherReducer
+    housesState: houseReducer
 });
